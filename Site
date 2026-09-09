@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neylan Business — Accompagnement 30 jours</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+background:#080706;color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+line-height:1.5;
+}
+a{text-decoration:none;color:inherit}
+
+header{
+height:72px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 6%;
+border-bottom:1px solid #25221f;
+position:sticky;
+top:0;
+z-index:10;
+background:rgba(8,7,6,.94);
+backdrop-filter:blur(15px);
+}
+
+.logo{
+font-weight:900;
+font-size:19px;
+letter-spacing:2px;
+}
+.logo span{color:#ff9d18}
+
+.header-btn,.main-btn{
+background:#ff9d18;
+color:#090807;
+font-weight:900;
+border-radius:40px;
+padding:14px 24px;
+display:inline-block;
+}
+
+.hero{
+min-height:720px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:80px 7%;
+background:
+radial-gradient(circle at 50% 35%,rgba(255,157,24,.12),transparent 42%),
+#080706;
+}
+
+.badge{
+border:1px solid #9a5d0b;
+color:#ffae32;
+border-radius:40px;
+padding:11px 20px;
+font-size:13px;
+font-weight:800;
+letter-spacing:2px;
+margin-bottom:30px;
+}
+
+.hero h1{
+font-size:clamp(45px,8vw,88px);
+line-height:.96;
+font-weight:950;
+letter-spacing:-3px;
+max-width:950px;
+}
+
+.hero h1 span{color:#ff9d18}
+
+.hero p{
+color:#aaa5a0;
+font-size:19px;
+max-width:700px;
+margin:30px auto;
+}
+
+.main-btn{
+font-size:17px;
+padding:19px 34px;
+box-shadow:0 0 35px rgba(255,157,24,.16);
+}
+
+.places{
+margin-top:20px;
+color:#77716b;
+font-size:15px;
+}
+
+section{padding:100px 6%;max-width:1150px;margin:auto}
+
+.section-title{
+text-align:center;
+font-size:clamp(38px,6vw,60px);
+font-weight:900;
+letter-spacing:-2px;
+margin-bottom:55px;
+}
+
+.offer{
+background:#151413;
+border:1px solid #35312d;
+border-radius:30px;
+padding:45px;
+max-width:850px;
+margin:auto;
+box-shadow:0 20px 70px rgba(0,0,0,.35);
+}
+
+.remaining{
+display:inline-block;
+border:1px solid #915b12;
+color:#ffad2d;
+border-radius:30px;
+padding:9px 17px;
+font-weight:800;
+font-size:13px;
+margin-bottom:25px;
+}
+
+.offer h2{
+font-size:38px;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.price{
+font-size:64px;
+font-weight:950;
+}
+
+.old{
+font-size:32px;
+color:#66615d;
+text-decoration:line-through;
+margin-left:12px;
+}
+
+.discount{
+display:inline-block;
+background:#3b2817;
+color:#ffad2d;
+padding:8px 12px;
+border-radius:9px;
+font-weight:900;
+margin-left:10px;
+}
+
+.code{
+border:1px dashed #8d5a13;
+color:#aaa39c;
+display:inline-block;
+padding:12px 20px;
+border-radius:30px;
+margin:18px 0 30px;
+}
+
+.code b{color:#ffad2d}
+
+.buy{
+display:block;
+background:#ff9d18;
+color:#090807;
+text-align:center;
+font-size:18px;
+font-weight:950;
+padding:20px;
+border-radius:20px;
+}
+
+.secure{
+display:flex;
+justify-content:center;
+gap:35px;
+color:#77716b;
+margin-top:25px;
+font-size:14px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.card{
+background:#151413;
+border:1px solid #302d29;
+border-radius:25px;
+padding:35px;
+min-height:210px;
+}
+
+.icon{
+width:58px;
+height:58px;
+border-radius:17px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid #87540e;
+background:#292016;
+color:#ff9d18;
+font-size:27px;
+margin-bottom:25px;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:12px;
+}
+
+.card p{
+color:#99938d;
+font-size:17px;
+}
+
+.steps{
+display:grid;
+gap:0;
+}
+
+.step{
+display:grid;
+grid-template-columns:80px 1fr;
+gap:25px;
+padding:35px 0;
+border-top:1px solid #292622;
+}
+
+.step-number{
+color:#ff9d18;
+font-size:24px;
+font-weight:900;
+}
+
+.step h3{font-size:24px;margin-bottom:8px}
+.step p{color:#99938d}
+
+.faq{
+max-width:950px;
+}
+
+details{
+background:#151413;
+border:1px solid #302d29;
+border-radius:20px;
+margin-bottom:13px;
+padding:25px;
+}
+
+summary{
+font-size:19px;
+font-weight:800;
+cursor:pointer;
+}
+
+details p{
+color:#99938d;
+margin-top:18px;
+}
+
+.final{
+text-align:center;
+padding:110px 6%;
+background:
+radial-gradient(circle,rgba(255,157,24,.12),transparent 45%),
+#0c0a08;
+}
+
+.final h2{
+font-size:clamp(40px,7vw,70px);
+font-weight:950;
+margin-bottom:25px;
+}
+
+.final p{
+color:#99938d;
+max-width:600px;
+margin:0 auto 35px;
+font-size:18px;
+}
+
+footer{
+border-top:1px solid #292622;
+padding:45px 6%;
+color:#77716b;
+text-align:center;
+}
+
+footer .logo{color:#fff;margin-bottom:12px}
+
+@media(max-width:650px){
+
+header{padding:0 5%;height:68px}
+.header-btn{padding:11px 16px;font-size:13px}
+
+.hero{
+min-height:650px;
+padding:70px 5%;
+}
+
+.hero h1{
+font-size:47px;
+letter-spacing:-2px;
+}
+
+.hero p{font-size:16px}
+
+.main-btn{
+width:100%;
+font-size:16px;
+}
+
+section{padding:75px 5%}
+
+.section-title{font-size:40px}
+
+.offer{
+padding:28px 22px;
+border-radius:25px;
+}
+
+.offer h2{font-size:29px}
+
+.price{font-size:54px}
+.old{font-size:24px}
+
+.discount{
+margin-top:10px;
+}
+
+.secure{
+flex-wrap:wrap;
+gap:15px;
+}
+
+.features{
+grid-template-columns:1fr;
+}
+
+.card{
+min-height:auto;
+padding:28px;
+}
+
+.step{
+grid-template-columns:55px 1fr;
+}
+
+.step h3{font-size:21px}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a class="logo" href="#">NEYLAN<span>BUSINESS</span></a>
+<a class="header-btn" href="#offre">Acheter maintenant</a>
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="badge">● NEYLAN BUSINESS</div>
+
+<h1>
+ACCOMPAGNEMENT<br>
+PERSONNALISÉ<br>
+<span>30 JOURS</span>
+</h1>
+
+<p>
+Un accompagnement individuel pour structurer,
+lancer et optimiser ton projet en ligne.
+</p>
+
+<a class="main-btn" href="#offre">
+JE VEUX ÊTRE ACCOMPAGNÉ &nbsp; →
+</a>
+
+<div class="places">20 places restantes</div>
+
+</section>
+
+
+<section id="offre">
+
+<div class="offer">
+
+<div class="remaining">● 20 PLACES RESTANTES</div>
+
+<h2>Accompagnement personnalisé — 30 jours</h2>
+
+<div>
+<span class="price">680 €</span>
+<span class="old">800 €</span>
+<span class="discount">-15%</span>
+</div>
+
+<div class="code">
+🏷 avec le code <b>NOUVEAU20</b>
+</div>
+
+<a class="buy" href="mailto:neylanbusiness0@gmail.com?subject=Achat%20Accompagnement%20Neylan%20Business">
+ACHETER MAINTENANT — 680 €
+</a>
+
+<div class="secure">
+<span>✓ Paiement sécurisé</span>
+<span>✓ Accès immédiat</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">Ce que tu vas avoir</h2>
+
+<div class="features">
+
+<div class="card">
+<div class="icon">☎</div>
+<h3>1 appel personnalisé / semaine</h3>
+<p>Un échange individuel chaque semaine pour avancer concrètement.</p>
+</div>
+
+<div class="card">
+<div class="icon">▢</div>
+<h3>Messages illimités pendant 30 jours</h3>
+<p>Pose tes questions et obtiens un accompagnement entre les appels.</p>
+</div>
+
+<div class="card">
+<div class="icon">◎</div>
+<h3>Stratégie personnalisée</h3>
+<p>Des conseils adaptés à ton projet et à ton niveau.</p>
+</div>
+
+<div class="card">
+<div class="icon">↗</div>
+<h3>Suivi individuel</h3>
+<p>Un cadre clair pour avancer étape par étape pendant les 30 jours.</p>
+</div>
+
+<div class="card">
+<div class="icon">◇</div>
+<h3>Choix de ta niche</h3>
+<p>Travaille sur un positionnement cohérent avec ton projet.</p>
+</div>
+
+<div class="card">
+<div class="icon">✦</div>
+<h3>Création de ton offre</h3>
+<p>Structure une offre claire et compréhensible pour tes prospects.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">Comment ça marche ?</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">01</div>
+<div>
+<h3>Appel découverte</h3>
+<p>Un premier échange pour comprendre ton projet, ton niveau et tes objectifs.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<div>
+<h3>Mise en place</h3>
+<p>Nous travaillons sur ta niche, ton offre, ton positionnement et ta stratégie.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<div>
+<h3>Accompagnement pendant 30 jours</h3>
+<p>Tu avances avec des appels hebdomadaires et un suivi personnalisé.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="faq">
+
+<h2 class="section-title">Questions fréquentes</h2>
+
+<details>
+<summary>Combien de temps dure l'accompagnement ?</summary>
+<p>L'accompagnement dure 30 jours à partir de son démarrage.</p>
+</details>
+
+<details>
+<summary>Combien d'appels sont prévus ?</summary>
+<p>Un appel personnalisé est prévu chaque semaine pendant les 30 jours.</p>
+</details>
+
+<details>
+<summary>Puis-je poser des questions entre les appels ?</summary>
+<p>Oui, tu peux poser tes questions pendant la durée de l'accompagnement.</p>
+</details>
+
+<details>
+<summary>Les résultats financiers sont-ils garantis ?</summary>
+<p>Non. Aucun résultat financier n'est garanti. Les résultats dépendent notamment du travail fourni, de la régularité, du marché et de la mise en application.</p>
+</details>
+
+<details>
+<summary>Que se passe-t-il après le paiement ?</summary>
+<p>Après le paiement, tu reçois les informations nécessaires pour prendre contact et démarrer ton accompagnement.</p>
+</details>
+
+</section>
+
+
+<section class="final">
+
+<h2>Prêt à passer à l'action ?</h2>
+
+<p>
+Structure ton projet avec un accompagnement personnalisé
+pendant 30 jours.
+</p>
+
+<a class="main-btn" href="#offre">
+JE VEUX ÊTRE ACCOMPAGNÉ →
+</a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="logo">NEYLAN<span>BUSINESS</span></div>
+
+<p>Accompagnement personnalisé en Dropservice.</p>
+
+<p style="margin-top:15px">
+neylanbusiness0@gmail.com
+</p>
+
+<p style="margin-top:25px">
+© 2026 Neylan Business — Tous droits réservés.
+</p>
+
+</footer>
+
+</body>
+</html>
